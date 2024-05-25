@@ -2,7 +2,9 @@ with(other) instance_destroy();
 
 effect_create_depth(-1000, ef_firework, x + 0, y + 0, 2, $ffffff);
 
-obj_game.points += 1;
+if(instance_number(obj_player)>0){//prevent NPE
+	obj_game.points += round(obj_player.speed*100);
+}
 
 if(sprite_index == spr_rock_big){
 	//explode big to small
@@ -15,7 +17,16 @@ if(sprite_index == spr_rock_big){
 		//explode small and respawn as big
 		sprite_index = spr_rock_big;
 		image_index = 0;	
-		x = -100;
+		var _random = random(4);
+		if(_random<1){
+			x = -100;
+		}else if(_random<2){
+			x = room_width + 100
+		}else if(_random<3){
+			y = -100;
+		}else{
+			y = room_height + 100
+		}
 	}else{
 		//just eliminate
 		instance_destroy();

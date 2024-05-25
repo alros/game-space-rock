@@ -1,1 +1,1 @@
-draw_text(10, 10, string(points) + "");
+draw_text(10, 10, "score: " + string(points));
