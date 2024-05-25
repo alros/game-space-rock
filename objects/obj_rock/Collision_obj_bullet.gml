@@ -3,7 +3,15 @@ with(other) instance_destroy();
 effect_create_depth(-1000, ef_firework, x + 0, y + 0, 2, $ffffff);
 
 if(instance_number(obj_player)>0){//prevent NPE
-	obj_game.points += round(obj_player.speed*100);
+	var _points = round(obj_player.speed*100);
+	obj_game.points += _points;
+	var _scores = {
+		x: x,
+		y: y,
+		points: _points,
+		counter: 0
+	}
+	array_insert(obj_game.draw_scores,0,_scores)
 }
 
 if(sprite_index == spr_rock_big){
