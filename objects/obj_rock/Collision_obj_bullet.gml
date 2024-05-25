@@ -10,6 +10,7 @@ if(sprite_index == spr_rock_big){
 	//explode big to small
 	sprite_index = spr_rock_small;
 	image_index = 0;
+	speed = 4
 	instance_copy(true);
 	audio_play_sound(MP3_Bomb_Explosion_Large_1, 10, false);
 }else{
@@ -17,6 +18,7 @@ if(sprite_index == spr_rock_big){
 		//explode small and respawn as big
 		sprite_index = spr_rock_big;
 		image_index = 0;	
+		speed = 2
 		var _random = random(4);
 		if(_random<1){
 			x = -100;
