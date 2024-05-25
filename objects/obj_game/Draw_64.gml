@@ -1,6 +1,9 @@
 draw_text(10, 10, "score: " + string(points));
 
 var _draw_score = function(_element, _index){
+	if(!_element){
+		return;
+	}
 	draw_text_colour(floor(_element.x), floor(_element.y - _element.counter), 
 					"" + string(_element.points),
 					c_lime, c_lime, c_green, c_green, 1);

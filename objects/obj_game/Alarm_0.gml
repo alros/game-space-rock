@@ -1,1 +1,1 @@
-room_restart();
+reset_room()
