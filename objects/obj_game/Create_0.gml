@@ -1,10 +1,6 @@
 points = 0;
 draw_scores = []
 
-setup_music = function(){
-	audio_play_sound(MP3_outrun_neon_dreams_80s_199668, 1, true)
-}
-
 reset_room = function(){
 	points = 0;
 	draw_scores = []
@@ -13,5 +9,4 @@ reset_room = function(){
 						  layer, obj_go_brrrr)
 }
 
-setup_music()
 reset_room()
